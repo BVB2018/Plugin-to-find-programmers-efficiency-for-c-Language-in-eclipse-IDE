@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 430px;
+    background-color: #f1f1f1;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+</head>
+<body>
+
+<h2>Finding programmers efficiency</h2>
+
+
+<ul>
+  <li><a class="active">Evaluation on</a></li>
+  <li><a href="#">Assignment Expression</a></li>
+  <li><a href="#">Pointers</a></li>
+  <li><a href="#">If else to switch</a></li>
+  <li><a href="#">If else to Ternary</a></li>
+  <li><a href="#">Loops</a></li>
+  <li><a href="#">Variables Declared and Not Used</a></li>
+  <li><a href="#">Type casting</a></li>
+  <li><a href="#">Usage of shift operators instead of multiplication and division while it's 2^n</a></li>
+  <li><a href="#">Scope of variables</a></li>
+  </ul>
+	
+	
+	
+
+          
+  <br> 
+  <form action="First" method="post">  
+  <input id="myFile" type="file" accept=".c"/>
+  <br>
+  <input type="submit" value="Submit">
+<pre><textarea id="fileDisplayArea" rows="20" cols="100" name="myTextArea" style="visibility:hidden" ></textArea></pre>
+
+  </form>
+   <script >
+      window.onload = function() {
+    var fileInput = document.getElementById('myFile');
+    var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+    fileInput.addEventListener('change', function(e) {
+      var file = fileInput.files[0];
+var textType = /text.*/;
+if (file.type.match(textType)) {
+  var reader = new FileReader();
+
+  reader.onload = function(e) {
+
+    fileDisplayArea.value = reader.result;
+
+  }
+
+
+  reader.readAsText(file);  
+
+} else {
+  fileDisplayArea.innerText = "File not supported!";
+}
+    });
+}
+  </script>
+</body>
+</html>
+
+
+
